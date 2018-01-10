@@ -3,6 +3,7 @@ package com.sysware.cloud.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Data
@@ -57,5 +58,8 @@ public class Athlete {
     //项目
     @Column(name = "ITEM")
     private String item;
+
+    @Column(name = "CREATE_TIME")
+    private Timestamp createTime;
 
 }

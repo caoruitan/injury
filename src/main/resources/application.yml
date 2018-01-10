@@ -1,12 +1,11 @@
-
 spring:
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
   datasource:
     username: root
     password: 1qaz3edc
-    url: jdbc:mysql://172.96.193.200/demo
+    url: jdbc:mysql://172.96.193.200/injury
     driver-class-name: com.mysql.jdbc.Driver
   application:
     name: sprotsman
@@ -14,11 +13,8 @@ spring:
     cache: false
     settings:
       template_update_delay: 0
-# JWT
-jwt:
-  header: Authorization
-  secret: mySecret
-  expiration: 604800
-  tokenHead: "Bearer "
+flyway:
+  baseline-on-migrate: true
+  encoding: UTF-8
 server:
   port: 80

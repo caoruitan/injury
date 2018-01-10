@@ -10,6 +10,8 @@ import com.sysware.cloud.vo.AthleteVo;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateFormatUtils;
 
+import java.sql.Timestamp;
+
 /**
  * 运动员支持类
  */
@@ -25,7 +27,10 @@ public final class AthleteSupport {
     }
 
     public static Athlete process(AthleteDto athleteDto) {
-        return ProcessUtils.process(Athlete.class, athleteDto,(athlete,dto) -> athlete.setId(UUIDUtil.getGuid()));
+        return ProcessUtils.process(Athlete.class, athleteDto,(athlete,dto) -> {
+            athlete.setId(UUIDUtil.getGuid());
+            athlete.setCreateTime(new Timestamp(System.currentTimeMillis()));
+        });
     }
 
 }
