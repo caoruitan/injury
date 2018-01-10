@@ -55,16 +55,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 
                 .authorizeRequests()
-//
-////                .antMatchers("/sportsman.htm").authenticated()
-////
-////                .antMatchers(HttpMethod.POST,"/sportsman","/categories").permitAll()
-////
-////                .antMatchers(HttpMethod.DELETE,"/posts/*","/categories/*").authenticated()
-////
-////                .antMatchers(HttpMethod.PUT,"/posts/*","/categories/*").authenticated()
-
-                .anyRequest().permitAll();
+//                .anyRequest().permitAll();
+                .anyRequest().authenticated();
         // 添加 filter
         httpSecurity.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
         // 禁用缓存
