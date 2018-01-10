@@ -1,0 +1,80 @@
+body {
+  background-color: #5B5C6E; }
+
+.p-data {
+  width: 9.375rem;
+  height: 2.1875rem;
+  border: 0.03125rem solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(51, 50, 71, 0.9);
+  margin: 0.3125rem 0.3125rem 0 0.3125rem;
+  border-radius: 0.125rem;
+  position: relative;
+  overflow: hidden; }
+  .p-data img {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0.4375rem;
+    float: left; }
+  .p-data h1 {
+    margin-top: 0.4375rem;
+    font-size: 0.4375rem;
+    color: white; }
+  .p-data p {
+    font-size: 0.375rem;
+    color: #CCCCCC;
+    margin-top: 0.125rem; }
+    .p-data p i {
+      margin-left: 1.25rem; }
+  .p-data .arrow {
+    background: url(../img/arrow.png) no-repeat;
+    width: 0.25rem;
+    height: 0.5rem;
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    margin-top: -0.25rem; }
+
+.content {
+  width: 9.375rem;
+  margin: 0.3125rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .content .area_first {
+    background: url(../img/first.svg) no-repeat center 0.625rem; }
+  .content .area_second {
+    background: url(../img/second.svg) no-repeat center 0.625rem; }
+  .content .area_third {
+    background: url(../img/third.svg) no-repeat center 0.625rem; }
+  .content .area_fourth {
+    background: url(../img/fourth.svg) no-repeat center 0.625rem; }
+  .content .area_fifth {
+    background: url(../img/fifth.svg) no-repeat center 0.625rem; }
+  .content .area_sixth {
+    background: url(../img/sixth.svg) no-repeat center 0.625rem; }
+  .content .area_first,
+  .content .area_second,
+  .content .area_third,
+  .content .area_fourth,
+  .content .area_fifth,
+  .content .area_sixth {
+    margin: 0.3125rem 0;
+    width: 4.375rem;
+    height: 2.6875rem;
+    border-radius: 0.125rem;
+    font-size: 0.375rem;
+    text-align: center;
+    line-height: 4.1875rem;
+    color: white;
+    background-size: 0.9375rem 0.75rem;
+    background-color: rgba(51, 50, 71, 0.9); }
+    .content .area_first span,
+    .content .area_second span,
+    .content .area_third span,
+    .content .area_fourth span,
+    .content .area_fifth span,
+    .content .area_sixth span {
+      font-size: 0.375rem;
+      color: white; }
+
+/*# sourceMappingURL=ryxx.css.map */
