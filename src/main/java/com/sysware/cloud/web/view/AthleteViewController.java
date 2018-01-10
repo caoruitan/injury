@@ -11,7 +11,7 @@ public class AthleteViewController {
         return "athlete_create";
     }
 
-    @GetMapping(value = "athlete")
+    @GetMapping(value = "/athlete")
     public String createAthlete(){
         return "athlete_create";
     }
