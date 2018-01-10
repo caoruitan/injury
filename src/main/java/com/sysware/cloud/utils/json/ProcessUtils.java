@@ -90,7 +90,7 @@ public final class ProcessUtils {
 
     public static <T, R > R processObject(R r, T src, ProcessCallback<R, T> callback) {
         try {
-            BeanUtils.copyProperties(r, src);
+            BeanUtils.copyProperties(src, r);
             if (callback != null) {
                 callback.call(r, src);
             }
