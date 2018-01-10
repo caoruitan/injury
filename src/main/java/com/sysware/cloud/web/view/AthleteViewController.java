@@ -8,10 +8,10 @@ public class AthleteViewController {
 
     @GetMapping(value = {"/","index"})
     public String sports(){
-        return "index";
+        return "athlete_create";
     }
 
-    @GetMapping(value = "athletes")
+    @GetMapping(value = "athlete")
     public String createAthlete(){
         return "athlete_create";
     }

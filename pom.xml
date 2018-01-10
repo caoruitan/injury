@@ -150,6 +150,7 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>injury</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
