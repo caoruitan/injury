@@ -64,8 +64,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .authorizeRequests()
 
-                .antMatchers("/","/index","/athlete","/items","/athlete/**").authenticated()
-                .anyRequest().permitAll();
+               // .antMatchers("/athlete","/items","/athlete/**").authenticated()
+
+               // .antMatchers("/**/*.html").permitAll()
+                .anyRequest().authenticated();
         // 添加 filter
         httpSecurity.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
         // 禁用缓存

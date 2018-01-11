@@ -18,76 +18,76 @@
 
 <body>
 <div id="app">
-<div class="split">
-    基本信息
-</div>
-<div class="content">
-    <div class="input-box">
-        <label>姓名</label>
-        <input placeholder="请输入"  v-model="athlete.name"/>
+    <div class="split">
+        基本信息
     </div>
-    <div class="input-box">
-        <label>项目</label>
-        <div class="selectBox" id="xm"></div>
-    </div>
-    <div class="input-box">
-        <label>性别</label>
-        <div class="selectBox" id="xb"></div>
-    </div>
+    <div class="content">
+        <div class="input-box">
+            <label>姓名</label>
+            <input placeholder="请输入"  v-model="athlete.name"/>
+        </div>
+        <div class="input-box">
+            <label>项目</label>
+            <div class="selectBox" id="xm"></div>
+        </div>
+        <div class="input-box">
+            <label>性别</label>
+            <div class="selectBox" id="xb"></div>
+        </div>
 
-    <div class="input-box">
-        <label>年龄（岁）</label>
-        <input placeholder="请输入"  v-model="athlete.age"/>
-    </div>
+        <div class="input-box">
+            <label>年龄（岁）</label>
+            <input placeholder="请输入"  v-model="athlete.age"/>
+        </div>
 
-    <div class="input-box">
-        <label>代表单位</label>
-        <input placeholder="请输入"  v-model="athlete.behalf_unit"/>
-    </div>
+        <div class="input-box">
+            <label>代表单位</label>
+            <input placeholder="请输入"  v-model="athlete.behalf_unit"/>
+        </div>
 
-    <div class="input-box">
-        <label>第几次参加冬奥会</label>
-        <input placeholder="请输入" v-model="athlete.participant_count"/>
-    </div>
+        <div class="input-box">
+            <label>第几次参加冬奥会</label>
+            <input placeholder="请输入" v-model="athlete.participant_count"/>
+        </div>
 
-    <div class="input-box">
-        <label>从什么项目跨选到本项</label>
-        <input placeholder="请输入" v-model="athlete.from_item"/>
-    </div>
+        <div class="input-box">
+            <label>从什么项目跨选到本项</label>
+            <input placeholder="请输入" v-model="athlete.from_item"/>
+        </div>
 
-    <div class="input-box">
-        <label>从事本项目几年</label>
-        <input placeholder="请输入" v-model="athlete.engage_year"/>
-    </div>
+        <div class="input-box">
+            <label>从事本项目几年</label>
+            <input placeholder="请输入" v-model="athlete.engage_year"/>
+        </div>
 
-    <div class="input-box">
-        <label>现执教教练</label>
-        <input placeholder="请输入" v-model="athlete.current_coach"/>
-    </div>
-    <div class="input-box">
-        <label>之前执教教练（选填）</label>
-        <input placeholder="请输入"  v-model="athlete.pre_coach"/>
-    </div>
+        <div class="input-box">
+            <label>现执教教练</label>
+            <input placeholder="请输入" v-model="athlete.current_coach"/>
+        </div>
+        <div class="input-box">
+            <label>之前执教教练（选填）</label>
+            <input placeholder="请输入"  v-model="athlete.pre_coach"/>
+        </div>
 
-</div>
-<div class="split">
-    获奖信息
-</div>
-<div class="content">
-    <div class="input-box">
-        <label>年度各单项最好成绩名次</label>
-        <input placeholder="请输入"  v-model="athlete.highest_rank"/>
     </div>
-    <div class="input-box">
-        <label>最近一次世锦赛各单项名次</label>
-        <input type="text" placeholder="请输入" v-model="athlete.latest_world_rank"/>
+    <div class="split">
+        获奖信息
     </div>
-    <div class="input-box">
-        <label>2016-17年度排名</label>
-        <input placeholder="请输入" v-model="athlete.yearly_rank">
+    <div class="content">
+        <div class="input-box">
+            <label>年度各单项最好成绩名次</label>
+            <input placeholder="请输入"  v-model="athlete.highest_rank"/>
+        </div>
+        <div class="input-box">
+            <label>最近一次世锦赛各单项名次</label>
+            <input type="text" placeholder="请输入" v-model="athlete.latest_world_rank"/>
+        </div>
+        <div class="input-box">
+            <label>2016-17年度排名</label>
+            <input placeholder="请输入" v-model="athlete.yearly_rank">
+        </div>
+        <button type="button" class="submitBtn" @click="createAthlete">保 存</button>
     </div>
-    <button type="button" class="submitBtn" @click="createAthlete">保 存</button>
-</div>
 </div>
 </body>
 <script class="demo-script">

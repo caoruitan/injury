@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>APP详情页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    	<!-- build:css ../css/all.min.css -->
+    	<link rel="stylesheet" type="text/css" href="../css/mui/mui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mui/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui/mui.poppicker.css" />
+		<link rel="stylesheet" type="text/css" href="../css/emarket.css"/>
+    	<!-- endbuild -->
+</head>
+<body>
+<div class="mui-content" id="marketDetail">
+    <div class="market-detTit">
+    	<img class="market-dtlogo" src="../images/emarket/u26.png" alt="" />
+    	<div class="market-dtinfo">
+    		<h5 class="market-dtinfo-name">热油泵总成三维模型</h5>
+    		<p class="market-dtinfo-datas">
+    			<span><b>5</b>人浏览</span>&nbsp;&nbsp;&nbsp;
+		        <span><b>5</b>人购买</span>
+    		</p>
+    		<p class="market-iconGrade mui-clearfix">
+    			<span class="market-icgbrt"></span>
+    			<span class="market-icgbrt"></span>
+    			<span class="market-icgbrt"></span>
+    			<span></span>
+    			<span></span>
+    		</p>
+    		<span class="market-tit-price" id="marketPrice">￥200</span>
+    	</div>
+    </div>
+    <div class="hall-detDesc">
+        	简介  
+        	<p class="hall-detDepara">目前工厂需要增加物料存量，希望采购型号为014的电器箱体热锌板5000件。具体规格要求：热锌板厚度：0.35mm,理重：17.7kg/m*2。</p>
+    </div>
+    <div class="hall-detDesc">
+        	相关属性  
+        	<p class="hall-detDepara">目前工厂需要增加物料存量，希望采购型号为014的电器箱体热锌板5000件。具体规格要求：热锌板厚度：0.35mm,理重：17.7kg/m*2。</p>
+    </div>
+    <div class="hall-detDesc market-detjt">
+        	APP截图
+        	<div class="mui-slider" style="margin-top:8px;">
+			  <div class="mui-slider-group mui-slider-loop">
+			    <!--支持循环，需要重复图片节点-->
+			    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../images/emarket/u30.png" /></a></div>
+			    <div class="mui-slider-item"><a href="#"><img src="../images/emarket/u26.png" /></a></div>
+			    <div class="mui-slider-item"><a href="#"><img src="../images/emarket/u28.png" /></a></div>
+			    <div class="mui-slider-item"><a href="#"><img src="../images/emarket/u30.png" /></a></div>
+			    <!--支持循环，需要重复图片节点-->
+			    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../images/emarket/u26.png" /></a></div>
+			  </div>
+			</div>
+    </div>
+    
+    <div class="hall-detDesc" style="border-bottom:none;">
+        	详情  
+        	<p class="hall-detDepara">在导弹总体设计流程中，在确定了战术技术指标后，作为定量设计的第一步，需要根据导弹有效载荷、速度方案、弹道方案、弹身直径、动力系统基本形式等约束条件，以及弹体阻力系数、结构系数、发动机质量比、比冲等设计师经验值，计算导弹满载质量、空载质量、弹体结构质量、发动机质量、发动机总冲、发动机工作时间等总体参数，作为后续发动机方案设计和结构设计的基础。 </p>
+    </div>
+    <div class="hall-persInfo market-mt20">
+    	<p class="mui-col-xs-2 hall-tx"><img src="http://placehold.it/40x30" alt="" /></p>
+    	<div class="mui-col-xs-10 hall-txinfo">
+    		<h5 class="hall-txname">科学松鼠</h5>
+    		<p class="hall-txmsg">个人|北京</p>
+    		<p class="hall-txmsg hall-tx-intro">我们立足于工程应用和客户需求，持续sfsdfsdfsdfsdf关注制导武器产品研发的前似的发射点似sdfsfssfdfd的士大夫士大夫</p>
+    	</div>
+    </div>
+</div>
+<!-- build:js ../js/all.min.js -->
+<script src="../js/static/vue-2.5.2/vue.js"></script>
+<script src="../js/static/mui/mui.js"></script>
+<script src="../js/static/mui/mui.picker.min.js"></script>
+<script src="../js/static/mui/mui.poppicker.js"></script>
+
+<!-- endbuild -->
+<script type="text/javascript">
+//点击价格 出弹框
+document.getElementById("marketPrice").addEventListener('tap', function() {
+	mui.alert('请到众工业官网（www.zoogooy.com）购买该APP。', '提示', function() {
+		//
+	});
+});
+var vm = new Vue({
+	el:'#marketDetail',
+	data: {
+   		marketJson: []
+  	}
+});
+var gallery = mui('.mui-slider');
+gallery.slider({
+  interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+});
+
+</script>
+</body>
+</html>

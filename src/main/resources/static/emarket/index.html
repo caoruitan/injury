@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>工业APP云市场</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    	<!-- build:css ../css/all.min.css -->
+    	<link rel="stylesheet" type="text/css" href="../css/mui/mui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mui/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui/mui.poppicker.css" />
+		<link rel="stylesheet" type="text/css" href="../css/emarket.css"/>
+    	<!-- endbuild -->
+</head>
+<body>
+<div class="mui-content" id="layoutDiv">
+    
+	<header class="mui-bar mui-bar-nav hall-header">
+	    <div class="mui-input-row mui-search">
+	        <input type="search" class="mui-input-clear" placeholder="">	        
+	    </div>	    
+	</header>
+	
+	<div class="market-fl">		
+		<p class="market-fl-wd3 mui-pull-left market-active">浏览量<span class="mui-icon mui-icon-arrowthinup"></span></p><!--mui-icon-arrowthindown 向下箭头-->
+		<p class="market-fl-wd3 mui-pull-left">价格<span class="mui-icon mui-icon-arrowthinup"></span></p>
+		<p class="market-fl-wd3 mui-pull-left">购买量<span class="mui-icon mui-icon-arrowthinup"></span></p>	
+		<div class="market-clear"></div>
+	</div>
+	<div id="pullrefresh" class="">
+	  <div class="mui-scroll">
+		    <ul class="mui-table-view mui-table-view-striped mui-table-view-condensed hall-list">
+				<li class="mui-table-view-cell mui-media" v-for="item in dataList">
+		            <a href="javascript:void(0);">        
+		                <img class="mui-media-object mui-pull-left" :src="item.imgId">
+		                <div class="mui-media-body market-mb10">
+		                	<div class="mui-pull-right market-list-price">¥ {{item.price}}</div>
+		                    <p class="mui-ellipsis">{{item.name}}</p>
+		                </div>
+		                <div class="mui-media-body">
+		                    <p class="mui-ellipsis market-list-msg">{{item.des}}</p>
+		                    <p class="mui-ellipsis market-list-nmb">
+		                    	<span class="market-color">{{item.browse}}</span><span class="market-list-fmsg">人浏览</span><span class="market-color">{{item.buy}}</span><span class="market-list-fmsg">人购买</span>
+		                    </p>
+		                </div>
+		            </a>
+		        </li>
+
+		    </ul>
+
+		</div>
+	</div>
+	</div>
+
+    <!-- build:js ../js/all.min.js -->
+    <script src="../js/static/vue-2.5.2/vue.js"></script>
+    <script src="../js/static/mui/mui.js"></script>
+    <script src="../js/static/mui/mui.picker.min.js"></script>
+    <script src="../js/static/mui/mui.poppicker.js"></script>
+    <!-- endbuild -->
+    <script type="text/javascript">
+    	var vm = new Vue({
+				  el: '#layoutDiv',
+				  data:{
+				        page: 1,		 // 当前页码
+				        totalPage:2,
+				        dataList:[]
+				  },
+				  methods:{
+				  }
+				});
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+					    auto:true,
+						contentrefresh : "正在加载...",
+						callback: pulldownRefresh
+					},
+					up: {
+					    contentrefresh : "正在加载...",
+					    contentnomore:'没有更多数据了',
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+			
+			function pullupRefresh() {
+				setTimeout(function() {
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++vm.page > vm.totalPage));
+					for (var i = vm.dataList.length, len = i + 20; i < len; i++) {
+						vm.dataList.push({name:"app名称名称"+i, 
+				        	des:"app描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息",
+				        	price:"100", 
+				        	imgId:"http://placehold.it/40x30", 
+				        	browse:15+i, 
+				        	buy:100+i});
+					}
+				}, 1500);
+			}
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				setTimeout(function() {
+					var array = []
+					for (var i = vm.dataList.length, len = i + 20; i < len; i++) {
+						array.push({name:"app名称名称"+i, 
+				        	des:"app描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息",
+				        	price:"100", 
+				        	imgId:"http://placehold.it/40x30", 
+				        	browse:15+i, 
+				        	buy:100+i});
+					}
+					vm.dataList = array;
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+				}, 1500);
+			}
+	</script>
+</body>
+</html>
