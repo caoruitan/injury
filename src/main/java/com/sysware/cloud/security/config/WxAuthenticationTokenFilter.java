@@ -34,7 +34,7 @@ public class WxAuthenticationTokenFilter extends OncePerRequestFilter {
         Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         StringBuffer url = httpRequest.getRequestURL();
-        System.out.println("url:"+ url);
+        System.out.println("url:"+ url +" sessionId="+request.getSession().getId());
         String paramState = httpRequest.getParameter("state");
         String paramCode = httpRequest.getParameter("code");
         if(authentication==null &&  StringUtils.isNotBlank(paramState) && StringUtils.isNotBlank(paramCode)){
