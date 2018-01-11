@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.sysware.cloud.utils.http.HttpClient;
 import com.sysware.cloud.utils.http.HttpsClient;
 import com.sysware.cloud.utils.json.GsonUtils;
+import com.sysware.cloud.utils.md5.Md5Util;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -101,9 +102,10 @@ public class WxUtils implements UserDetailsService {
                 userInfo.setGender(jsonObject.get("gender").getAsString());
                 userInfo.setMobile(jsonObject.get("mobile").getAsString());
                 userInfo.setPhoto(jsonObject.get("avatar").getAsString());
-
+                userInfo.setUserId(jsonObject.get("userid").getAsString());
+                userInfo.setName(jsonObject.get("name").getAsString());
                 //TODO 角色处理
-
+                userInfo.setPassword("123456");
                 return userInfo;
             } catch (Exception e) {
                 log.error(e.getMessage(),e);
@@ -114,8 +116,10 @@ public class WxUtils implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String code) throws UsernameNotFoundException {
-      return WxUtils.getUserByCode(code);
+    public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
+        UserInfo userInfo=  WxUtils.getUserById(userId);
+        userInfo.setPassword(Md5Util.digestMD5("123456"));
+        return userInfo;
     }
 
     public static void main(String[] args) {

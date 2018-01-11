@@ -1,7 +1,9 @@
 package com.sysware.cloud.security.config;
 
 import com.sysware.cloud.utils.wechat.WxConstants;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 
@@ -31,6 +33,11 @@ public class WxAuthenticationEntryPoint implements AuthenticationEntryPoint, Ser
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         StringBuffer url = httpRequest.getRequestURL();
+        Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
+        if(authentication!=null){
+            Object obj = authentication.getPrincipal();
+        }
+
         if (httpRequest.getQueryString() != null) {
             url.append('?');
             url.append(httpRequest.getQueryString());
